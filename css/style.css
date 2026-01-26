@@ -1,0 +1,336 @@
+/* Fonts & Variables */
+:root {
+    --primary-color: #1a1a1a;
+    --accent-color: #C0A062;
+    /* Gold */
+    --accent-hover: #a3864d;
+    --bg-light: #f8f9fa;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--primary-color);
+    line-height: 1.8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+}
+
+.font-heading {
+    font-family: var(--font-heading);
+}
+
+.text-primary-gold {
+    color: var(--accent-color) !important;
+}
+
+.bg-primary-gold {
+    background-color: var(--accent-color) !important;
+}
+
+.tracking-wider {
+    letter-spacing: 0.1em;
+}
+
+.tracking-wide {
+    letter-spacing: 0.05em;
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+
+/* Buttons */
+.btn-primary-custom {
+    background-color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-outline-dark,
+.btn-outline-light {
+    transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover,
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+}
+
+/* Sections */
+.section-padding {
+    padding: 100px 0;
+}
+
+/* Navbar */
+.navbar {
+    padding: 15px 0;
+    transition: all 0.4s ease;
+    background-color: #ffffff;
+    /* Always solid white */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow always */
+}
+
+/* Scrolled state can just adjust padding for compact feel */
+.navbar.scrolled {
+    padding: 10px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: var(--primary-color) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-color) !important;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    /* Clean fallback/primary background */
+    background: #000;
+}
+
+.hero-bg-image {
+    background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+    background-size: cover;
+    z-index: 0;
+    animation: zoomEffect 20s infinite alternate;
+}
+
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.hero-overlay {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    color: #fff;
+}
+
+.line {
+    width: 40px;
+    height: 2px;
+    display: inline-block;
+}
+
+/* Services */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.service-link:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Gallery Hover */
+.gallery-item-hover img {
+    transition: transform 0.6s ease;
+}
+
+.gallery-item-hover:hover img {
+    transform: scale(1.05);
+}
+
+/* FABs */
+.fab-wa {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fab-wa:hover {
+    transform: scale(1.1);
+}
+
+.fab-top {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.fab-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fab-top:hover {
+    background-color: var(--accent-color);
+}
+
+/* MOBILE OPTIMIZATION (Responsiveness) */
+@media (max-width: 991.98px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .navbar-collapse {
+        background: #ffffff;
+        padding: 20px;
+        /* More padding */
+        margin-top: 15px;
+        border-radius: 0 0 10px 10px;
+        /* Rounded only at bottom */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        /* Subtle separation */
+        width: 100%;
+        /* Ensure full width */
+        position: absolute;
+        /* Float it */
+        left: 0;
+        top: 100%;
+    }
+
+    .nav-item {
+        padding: 10px 0;
+        /* Increase tap target size */
+        border-bottom: 1px solid #f8f9fa;
+        /* Separator */
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .navbar-toggler {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        /* Restore subtle border */
+        padding: 0.5rem 0.75rem;
+        /* Standard Bootstrap padding */
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.25rem rgba(192, 160, 98, 0.25);
+        /* Focus ring with brand color */
+        outline: none;
+    }
+
+    .navbar-toggler:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        /* Hover effect */
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.6);
+        /* Darker overlay on mobile for readability */
+    }
+
+    .display-5 {
+        font-size: 2rem;
+    }
+
+    .about-images .experience-badge {
+        padding: 15px !important;
+    }
+
+    .fab-wa {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .fab-top {
+        bottom: 80px;
+        right: 25px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+}
