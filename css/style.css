@@ -55,6 +55,14 @@ h6 {
     letter-spacing: 2px;
 }
 
+.hover-text-gold {
+    transition: color 0.3s ease;
+}
+
+.hover-text-gold:hover {
+    color: var(--accent-color) !important;
+}
+
 /* Buttons */
 .btn-primary-custom {
     background-color: var(--accent-color);
@@ -127,7 +135,7 @@ h6 {
 }
 
 .hero-bg-image {
-    background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+    background: url('../images/hero_luxury.png') no-repeat center center;
     background-size: cover;
     z-index: 0;
     animation: zoomEffect 20s infinite alternate;
